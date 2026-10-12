@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Landscape Sketch：面向景观设计师的 Agent Skill，将场地意图整理成专业的景观可视化提示词。">
+<title>Landscape Sketch — 从场地意图到可视化提示词</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="topography" aria-hidden="true"></canvas>
+<svg class="filter-defs" aria-hidden="true"><defs><filter id="liquid-morph" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.012 0.025" numOctaves="2" seed="7" result="noise"/><feDisplacementMap id="morph-displacement" in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg>
+<header class="nav"><a class="brand" href="#" aria-label="Landscape Sketch 首页"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m3 22 13-15 13 15M8 22l8-9 8 9M3 27h26"/></svg>landscape<span>sketch</span></a><nav aria-label="主导航"><a href="#capabilities">能力</a><a href="#canvas">案例画布</a><a href="#workflow">工作流</a></nav><a class="nav-cta" href="#install">安装 Skill <span>↗</span></a></header>
+<main>
+<section class="hero wrap">
+<div class="hero-layout"><div class="hero-copy">
+
+<div class="hero-heading"><h1><span>从场地意图</span><br><span class="accent">到可视化提示词</span></h1></div>
+<div class="hero-bottom"><div><p class="hero-keywords"><span class="rotating" aria-label="彩平、透视、剖立面、分析图、四季"><span id="rotating-word" aria-hidden="true">彩平</span></span></p><p class="intro">在 Codex 里说一句场地意图，<br>Skill 整理提示词，图像随之成型。</p><div class="actions"><a class="button primary" href="#canvas">探索案例画布 <span>↗</span></a><a class="button secondary" href="https://github.com/buu206/landscape-sketch-skill" target="_blank" rel="noopener">查看 GitHub <span>↗</span></a><button class="text-button" data-copy="install">复制安装命令 ⧉</button></div></div></div>
+</div>
+<div class="hero-device" id="hero-device" data-phase="user" aria-label="Codex 与 Landscape Sketch 预设演示">
+<div class="device-lid"><span class="device-camera" aria-hidden="true"></span><div class="device-screen">
+<div class="device-toolbar"><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="device-title">Codex · landscape-sketch</span><button id="hero-replay" type="button">重播演示 ↺</button></div>
+<div class="device-workspace"><div class="device-chat" aria-label="演示对话">
+<div class="device-message device-user"><span class="device-role">YOU</span><p id="hero-user">$landscape-sketch 40×30m 儿童游乐园，马克笔人视透视，初夏傍晚</p></div>
+<div class="device-message device-assistant"><span class="device-role">CODEX</span><p id="hero-assistant">收到。已锁定场地与风格，正在组装英文提示词…</p></div>
+<div class="device-message device-prompt"><span class="device-role">PROMPT</span><p id="hero-prompt">Architectural marker sketch of a 40×30m children's playground…</p></div>
+</div>
+<div class="device-preview" aria-label="预置图片生成过程"><div class="preview-placeholder" aria-hidden="true"><div class="preview-contours"></div><span></span><span></span><span></span></div><div class="generation-status" aria-hidden="true"><span id="hero-generation-label">Generating… 42%</span><div class="generation-track"><i id="hero-progress"></i></div></div><img class="hero-day-result" src="assets/playground-day-marker.jpg" alt="儿童游乐园日景马克笔预置结果" fetchpriority="high"><div class="hero-night-result"><img src="assets/playground-night-marker.jpg" alt="同一儿童游乐园夜景马克笔预置结果"></div></div>
+</div>
+</div></div><div class="device-base" aria-hidden="true"><span></span></div>
+</div></div>
+</section>
+<section id="capabilities" class="section wrap">
+<div class="section-top"><div><h2>一种场地意图。<br><span class="muted">五种专业表达。</span></h2></div></div>
+<div class="cap-grid">
+<article class="cap-card"><div class="card-top"><svg viewBox="0 0 120 80"><path d="M13 12h94v56H13zM40 12v56M40 42h67M13 28h27M75 42v26"/><path class="soft" d="M52 22h43v10H52zM50 52h15v7H50z"/><circle cx="26" cy="48" r="7"/></svg></div><h3>彩色总平面</h3><p class="card-en">Colored Site Plan</p><p>场地边界、功能分区、园路体系与植物结构；约束图例、指北针与比例尺。</p></article>
+<article class="cap-card"><div class="card-top"><svg viewBox="0 0 120 80"><path d="M10 58h100M25 58V32l25-17 25 17v26M25 32l25 9 25-9M50 41v17M80 58V27M69 36l11-18 12 18zM14 58l36-17 55 17"/></svg></div><h3>手绘透视</h3><p class="card-en">Perspective Sketch</p><p>空间层次、视平线与比例人，建立乔灌草竖向关系与统一的光影方向。</p></article>
+<article class="cap-card"><div class="card-top"><svg viewBox="0 0 120 80"><path d="M8 57h37V44h26v13h40M8 65h103M25 57V26M14 32l11-17 12 17zM88 57V20M75 29l13-19 13 19zM45 44v21M71 57v8"/><path stroke-dasharray="3 4" d="M9 37h102"/></svg></div><h3>剖面与立面</h3><p class="card-en">Section & Elevation</p><p>表达相对高差与剖切关系，呈现驳岸及铺装构造的概念级示意。</p></article>
+<article class="cap-card"><div class="card-top"><svg viewBox="0 0 120 80"><path d="M15 12h90v56H15zM15 51l30-24 28 23 32-25" stroke-dasharray="4 4"/><circle cx="45" cy="27" r="9"/><circle cx="73" cy="50" r="9"/><path d="m97 24 8 1-1 8M44 36v22"/></svg></div><h3>概念分析图</h3><p class="card-en">Concept Diagram</p><p>梳理流线、功能分区、视线通廊与日照示意；聚焦设计逻辑，非工程计算。</p></article>
+<article class="cap-card"><div class="card-top"><svg viewBox="0 0 120 80"><circle cx="29" cy="27" r="9"/><path d="M29 9v5M29 40v5M11 27h5M42 27h5M20 65l34-30 31 30M66 18a12 12 0 0 0 18 14 12 12 0 1 1-18-14zM86 65l12-17 12 17"/></svg></div><h3>四季与时段氛围</h3><p class="card-en">Seasonal Mood Study</p><p>固定平面布局与镜头，仅切换植物季相、色温与照明，保持方案可比性。</p></article>
+</div>
+</section>
+<section id="canvas" class="section canvas-section"><div class="wrap"><div class="section-top"><div><h2>布局锁定。<span class="muted">变量可控。</span></h2></div></div>
+<div class="canvas-toolbar"><div class="chip-group" id="style-chips" aria-label="夜景表现风格"><button class="chip active" data-style="marker" aria-pressed="true">马克笔</button><button class="chip" data-style="watercolor" aria-pressed="false">水彩淡彩</button><button class="chip" data-style="realistic" aria-pressed="false">写实渲染</button></div></div>
+<div class="compare" style="--split:50%"><div class="image-side night-side"><img id="right-image" src="assets/playground-night-marker.jpg" alt="同一儿童游乐园的夜景马克笔效果" loading="lazy"></div><div class="image-side day-side"><img id="left-image" src="assets/playground-day-marker.jpg" alt="同一儿童游乐园的日景马克笔效果" loading="lazy"></div><div class="divider"><span>‹ <b>‖</b> ›</span></div><input id="compare-range" type="range" min="0" max="100" value="50" aria-label="日夜景对比位置" aria-valuetext="日景占 50%"></div>
+
+
+</div></section>
+<section id="demo" class="section wrap"><div class="demo-grid"><div class="demo-copy"><h2>对话开始。<br><span class="muted">表达逐渐清晰。</span></h2><p>将零散的设计条件，组织成可执行的视觉指令。<br>每次最多补充两个缺省项，保留你的场地判断。</p><a class="text-link" href="#install">试用这句触发语 <span>↗</span></a></div><div class="chat"><div class="chat-header"><span><i></i> LANDSCAPE SKETCH</span></div><div class="chat-body"><span class="chat-role">YOU</span><div class="bubble user">$landscape-sketch 40×30m 儿童游乐园，<br>马克笔人视透视，初夏傍晚</div><span class="chat-role agent">LS / BRIEFING INTAKE</span><div class="bubble" id="chat-question">是否需要分龄活动区？有哪些必须保留的场地要素？</div><div id="demo-response" hidden><div class="bubble user">分为幼儿与学龄儿童活动区，保留微地形与沙坑。</div><span class="chat-role agent">LS / PROMPT ASSEMBLY</span><div class="prompt-preview"><span>ENGLISH PROMPT <b>↗</b></span><p>Architectural marker sketch of a 40 × 30 m children's playground, separate age-based activity zones, retained landform and sandpit, layered trees, shrubs and groundcover, eye-level perspective, early summer evening, consistent light direction…</p></div><img class="chat-result" src="assets/playground-day-marker.jpg" loading="lazy" alt="预置儿童游乐园马克笔概念图"></div><button class="button demo-button" id="demo-play">播放示例对话 <span>→</span></button></div></div></div></section>
+<section id="workflow" class="section workflow-section"><div class="wrap"><div class="section-top"><div><h2>把专业判断，<span class="muted">写进每一步。</span></h2></div></div><div class="stepper"><div class="step-tabs" role="tablist" aria-label="提示词工作流"><button role="tab" id="step-tab-0" aria-controls="step-panel-0" aria-selected="true" tabindex="0" data-step="0"><span>01</span>需求问诊</button><button role="tab" id="step-tab-1" aria-controls="step-panel-1" aria-selected="false" tabindex="-1" data-step="1"><span>02</span>工作流路由</button><button role="tab" id="step-tab-2" aria-controls="step-panel-2" aria-selected="false" tabindex="-1" data-step="2"><span>03</span>提示词组装</button><button role="tab" id="step-tab-3" aria-controls="step-panel-3" aria-selected="false" tabindex="-1" data-step="3"><span>04</span>表达质量检查</button></div><div class="step-panels"><div role="tabpanel" id="step-panel-0" aria-labelledby="step-tab-0" ><span class="step-number">01</span><div><h3>需求问诊</h3><h4>Briefing Intake</h4><p>场地类型、规模、季节时段、表现风格与视图类型。每次最多追问 2 项，缺项可使用默认值。</p></div></div><div role="tabpanel" id="step-panel-1" aria-labelledby="step-tab-1" hidden><span class="step-number">02</span><div><h3>工作流路由</h3><h4>Workflow Routing</h4><p>选择 plan-view、perspective-sketch、section-elevation、concept-diagram 或 seasonal-mood。</p></div></div><div role="tabpanel" id="step-panel-2" aria-labelledby="step-tab-2" hidden><span class="step-number">03</span><div><h3>提示词组装</h3><h4>Prompt Assembly</h4><p>风格前缀 + 场景描述 + 技术约束 + 负面词。将视角、比例、构图与画幅明确写入。</p></div></div><div role="tabpanel" id="step-panel-3" aria-labelledby="step-tab-3" hidden><span class="step-number">04</span><div><h3>表达质量检查</h3><h4>QA Checklist</h4><p>核对比例人、乔灌草分层、铺装宽度暗示、水体倒影与统一光源；彩平检查指北针、比例尺和图例。</p></div></div></div><button class="step-next" id="step-next">下一步 <span>→</span></button></div></div></section>
+<section id="install" class="section wrap"><div class="install-grid"><div><h2>让下一次构思，<br><span class="accent">有据可绘。</span></h2><p class="section-desc">在 Codex 项目根目录安装，<br>用一句设计需求启动你的可视化工作流。</p><a class="text-link" href="https://github.com/buu206/landscape-sketch-skill" target="_blank" rel="noopener">在 GitHub 查看完整 Skill <span>↗</span></a></div><div><div class="code-box"><div class="code-header"><span>项目级安装</span><button data-copy="install" aria-label="复制安装命令">复制 ⧉</button></div><pre id="install-code"><code>git clone https://github.com/buu206/landscape-sketch-skill.git .agents/skills/landscape-sketch</code></pre></div><div class="trigger-box"><button data-copy="trigger" aria-label="复制触发语">⧉</button><p id="trigger-text">$landscape-sketch 帮我生成滨水步道水彩彩平提示词</p></div></div></div></section>
+<aside class="disclaimer wrap"><p>AI 图像仅用于概念表达与方案沟通；尺寸、竖向、植物配置、照明、游乐设施与构造详图须由持证设计师校核，不得作为施工图或报建图纸。</p></aside>
+</main><footer class="wrap"><a class="brand" href="#">landscape<span>sketch</span></a><div><a href="https://github.com/buu206/landscape-sketch-skill" target="_blank" rel="noopener">GitHub ↗</a></div></footer><div id="toast" role="status" aria-live="polite"></div><script src="app.js"></script>
+</body></html>

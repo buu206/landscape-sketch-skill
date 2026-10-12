@@ -4,6 +4,14 @@
 
 An instruction-based Agent Skill for landscape visualization prompts: site plans, perspective sketches, sections/elevations, concept diagrams and seasonal mood studies.
 
+## 展示落地页
+
+[浏览展示页源码](docs/index.html) · [页面文件与本地预览说明](docs/README.md)
+
+展示 Skill 的专业工作流、Codex 对话演示与日夜景风格对比。下载仓库后直接打开 `docs/index.html` 即可浏览，无需安装依赖。
+
+[![Landscape Sketch 展示落地页](docs/preview-desktop.png)](docs/index.html)
+
 ## 示例：儿童游乐园
 
 同一场景的日景与夜景，保留布局和镜头，采用马克笔手绘表现。示例由 AI 图像工具生成。
@@ -84,6 +92,7 @@ landscape-sketch-skill/
 │   ├── marker-sketch.md
 │   ├── watercolor.md
 │   └── realistic-render.md
+├── docs/                    # 展示落地页与压缩素材
 ├── examples/
 ├── README.md
 └── LICENSE
